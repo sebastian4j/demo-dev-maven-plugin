@@ -2,7 +2,7 @@
 
 Plugin **maven** para monitorear la carpeta del código fuente permitiendo compilarlo y ejecutar el **jar** resultante cuando detecta algún cambio.
 
-El objetivo es permitir utilizar un IDE y no tener que volver a compilar el código y luego lanzar la aplicación.
+El objetivo es permitir utilizar un IDE y no tener que volver a compilar el código y luego lanzar la aplicación mientras se modifica el código fuente.
 
 Las operaciones que se ejecutan son:
 - mvn package
@@ -13,7 +13,8 @@ Para poder utilizando se ejecuta lo siguiente:
 
 > mvn com.sebastian.plugins:demo-dev-maven-plugin:1.3-SNAPSHOT:desa
 
-Actualmente lo que hace es utilizar **mvn package** y luego lanzar el ejecutable **Java** sin realizar alguna optimización, tiene que estar disponible en el path *mvn* y *java*
+Actualmente lo que hace es utilizar **mvn package** y luego lanzar el ejecutable **Java** sin realizar alguna optimización.
+Tiene que estar disponible en el path *mvn* y *java*
 
 #### uso:
 
