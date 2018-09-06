@@ -10,3 +10,5 @@ Las operaciones que se ejecutan son:
  ejemplo: java -jar target/a.jar
 
 Para poder utilizando se ejecuta lo siguiente:
+
+> mvn com.sebastian.plugins:demo-dev-maven-plugin:1.3-SNAPSHOT:desa
