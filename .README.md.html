@@ -647,6 +647,37 @@ function setDocumentScrollTop(ypos)
  <li>mvn package</li> 
  <li>java -jar {project.build.director}/{project.build.finalName}.{project.packaging} ejemplo: java -jar target/a.jar</li> 
 </ul> 
-<p>Para poder utilizando se ejecuta lo siguiente:</p>
+<p>Para poder utilizando se ejecuta lo siguiente:</p> 
+<blockquote> 
+ <p>mvn com.sebastian.plugins:demo-dev-maven-plugin:1.3-SNAPSHOT:desa</p> 
+</blockquote> 
+<p>Actualmente lo que hace es utilizar <strong>mvn package</strong> y luego lanzar el ejecutable <strong>Java</strong> sin realizar alguna optimizaci&oacute;n, tiene que estar disponible en el path <em>mvn</em> y <em>java</em></p> 
+<h4> <a id="uso" class="anchor" href="#uso" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>uso:</h4> 
+<p>En el <strong>pom.xml</strong> proyecto que estemos desarrollando hay que incluir lo siguiente:</p> 
+<div class="highlight highlight-text-xml">
+ <pre>&lt;<span class="pl-ent">build</span>&gt;
+	&lt;<span class="pl-ent">plugins</span>&gt;
+		&lt;<span class="pl-ent">plugin</span>&gt;
+			&lt;<span class="pl-ent">groupId</span>&gt;com.sebastian.plugins&lt;/<span class="pl-ent">groupId</span>&gt;
+			&lt;<span class="pl-ent">artifactId</span>&gt;demo-dev-maven-plugin&lt;/<span class="pl-ent">artifactId</span>&gt;
+			&lt;<span class="pl-ent">version</span>&gt;[1,)&lt;/<span class="pl-ent">version</span>&gt;
+		&lt;/<span class="pl-ent">plugin</span>&gt;
+		...
+	&lt;/<span class="pl-ent">plugins</span>&gt;
+&lt;/<span class="pl-ent">build</span>&gt;</pre>
+</div> 
+<p>luego se ejecuta en el proyecto con la siguiente instrucci&oacute;n maven:</p> 
+<blockquote> 
+ <p>mvn com.sebastian.plugins:demo-dev-maven-plugin:1.3-SNAPSHOT:desa</p> 
+</blockquote> 
+<p>Se puede ejecutar con eclipse y se mantendra escuchando cambios en el arbol de directorios y se puede detener desde el mismo IDE.</p> 
+<blockquote> 
+ <p>El repositorio <a href="https://github.com/sebastian4j/demo-kum">https://github.com/sebastian4j/demo-kum</a> es un ejemplo de como utilizar el plugin</p> 
+</blockquote> 
+<hr /> 
+<p>La intenci&oacute;n es poder implementar una soluci&oacute;n que permita realizar en forma eficiente la labor de actualizar la aplicaci&oacute;n para reflejar los cambios, esta versi&oacute;n por lo menos... funciona 
+ <g-emoji class="g-emoji" alias="grimacing" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f62c.png">
+  😬
+ </g-emoji></p>
 </body>
 </html>
