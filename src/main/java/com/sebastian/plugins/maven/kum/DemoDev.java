@@ -14,8 +14,6 @@ import java.nio.file.WatchService;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -67,7 +65,6 @@ public class DemoDev extends AbstractMojo {
   private String packaging;
 
   private WatchService watcher;
-  private ExecutorService executor;
 
   private Process p;
 
@@ -111,13 +108,13 @@ public class DemoDev extends AbstractMojo {
     getLog().info("packaging: " + packaging);
     try {
       watcher = FileSystems.getDefault().newWatchService();
-      executor = Executors.newSingleThreadExecutor();
       escuchar();
     } catch (final Exception e) {
       getLog().info(e);
     }
   }
 
+  @SuppressWarnings("unchecked")
   private void escuchar() throws IOException {
     final Map<WatchKey, Path> keys = new HashMap<>();
     final Consumer<Path> register = p -> {
